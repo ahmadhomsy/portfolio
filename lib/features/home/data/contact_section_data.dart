@@ -11,5 +11,5 @@ I'll try my best to get back to you!
   };
   static const String email = 'ahmadhoahmadho@gmail.com';
   static const String phone = '+963 998 501 595';
-  static const String location = 'mazzeh,Damascus,Syria';
+  static const String location = 'Mazzeh,Damascus,Syria';
 }

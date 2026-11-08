@@ -6,6 +6,7 @@ class FakeProjects {
   FakeProjects._();
 
   static final List<ProjectModel> all = [
+    _shamBooking,
     _simpleChatApp,
     _dailyDoneApp,
     _weatherApp,
@@ -13,17 +14,73 @@ class FakeProjects {
     _bmiCalculator,
   ];
 
-  static ProjectModel? getById(String id) {
-    try {
-      return all.firstWhere((p) => p.id == id);
-    } on StateError {
-      return null;
-    }
+  static ProjectModel? getById(String? id) {
+    if (id == null) return null;
+    return all.cast<ProjectModel?>().firstWhere(
+          (p) => p?.id.toLowerCase() == id.toLowerCase(),
+          orElse: () => null,
+        );
   }
 
+  static const _shamBooking = ProjectModel(
+    id: 'Sham Booking',
+    title: 'Sham Booking',
+    subtitle: 'Production-ready hotel booking platform with secure payments',
+    category: 'Travel & Hospitality',
+    status: ProjectStatus.completed,
+    description:
+        'Sham Booking is an end-to-end hotel reservation platform offering hotel discovery, '
+        'real-time room availability, integrated maps, and multiple payment methods.',
+    longDescription:
+        'Sham Booking is a production-oriented mobile application featuring a comprehensive '
+        'booking lifecycle. It allows users to browse hotels via maps, check availability, '
+        'and choose between online card payments or cash on arrival. Built with Clean Architecture '
+        'and BLoC, it seamlessly communicates with a NestJS/Node.js backend. The app integrates '
+        'Firebase, Google Maps, secure token storage, and CI/CD pipelines, supporting distinct '
+        'Development and Production environments (Flavors).',
+    duration: '2 weeks',
+    client: 'University Project',
+    rating: '',
+    downloads: '',
+    images: [
+      'assets/images/sham_booking/img_1.jpg',
+      'assets/images/sham_booking/img_2.jpg',
+      'assets/images/sham_booking/img_3.jpg',
+      'assets/images/sham_booking/img_4.jpg',
+      'assets/images/sham_booking/img_5.jpg',
+      'assets/images/sham_booking/img_6.jpg',
+      'assets/images/sham_booking/img_7.jpg',
+      'assets/images/sham_booking/img_8.jpg',
+      'assets/images/sham_booking/img_9.jpg',
+      'assets/images/sham_booking/img_10.jpg',
+      'assets/images/sham_booking/img_11.jpg',
+    ],
+    features: [
+      'Hotel & Room Discovery with Maps',
+      'Real-time Availability Checking',
+      'Online Card & Cash on Arrival Payments',
+      'Reservation Lifecycle & Cancellation Policy',
+      'Email Verification & Secure Authentication',
+      'Push Notifications (FCM)',
+      'Development & Production Flavors',
+      'Multi-language (Localization) Support',
+    ],
+    techStack: [
+      'Flutter & Dart',
+      'Clean Architecture',
+      'BLoC / Cubit',
+      'NestJS / Node.js (Backend)',
+      'Dio & GetIt (DI)',
+      'Firebase & Google Maps SDK',
+      'Payment SDK Integration',
+      'CI/CD Workflows',
+    ],
+    sourceCodeUrl: 'https://github.com/ahmadhomsy/sham-booking',
+    liveDemoUrl: '',
+  );
   static const _simpleChatApp = ProjectModel(
     id: 'Simple Chat App',
-    title: 'Simple Chat App',
+    title: 'Simple-Chat-App',
     subtitle: 'Real-time messaging app with a clean and simple interface',
     category: 'Communication',
     status: ProjectStatus.inProgress,
@@ -86,12 +143,12 @@ class FakeProjects {
     rating: '',
     downloads: '',
     images: [
-      'assets/images/daily_done/img_1.png',
-      'assets/images/daily_done/img_2.png',
-      'assets/images/daily_done/img_3.png',
-      'assets/images/daily_done/img_4.png',
-      'assets/images/daily_done/img_5.png',
-      'assets/images/daily_done/img_6.png',
+      'assets/images/daily_done/img_1.webp',
+      'assets/images/daily_done/img_2.webp',
+      'assets/images/daily_done/img_3.webp',
+      'assets/images/daily_done/img_4.webp',
+      'assets/images/daily_done/img_5.webp',
+      'assets/images/daily_done/img_6.webp',
     ],
     features: [
       'Task Creation & Management',
@@ -183,11 +240,11 @@ class FakeProjects {
     duration: '2 days',
     client: 'Personal Project',
     images: [
-      'assets/images/quiz_app/img.png',
-      'assets/images/quiz_app/img_1.png',
-      'assets/images/quiz_app/img_2.png',
-      'assets/images/quiz_app/img_3.png',
-      'assets/images/quiz_app/img_4.png',
+      'assets/images/quiz_app/img.webp',
+      'assets/images/quiz_app/img_1.webp',
+      'assets/images/quiz_app/img_2.webp',
+      'assets/images/quiz_app/img_3.webp',
+      'assets/images/quiz_app/img_4.webp',
     ],
     features: [
       'Multiple Choice Questions',

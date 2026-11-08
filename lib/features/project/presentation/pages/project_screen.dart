@@ -39,20 +39,18 @@ class _ProjectScreenState extends State<ProjectScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SelectionArea(
-          child: Expanded(
-            child: Scrollbar(
+          child: Scrollbar(
+            controller: _projectScrollController,
+            thumbVisibility: isDesktop,
+            child: SingleChildScrollView(
               controller: _projectScrollController,
-              thumbVisibility: isDesktop,
-              child: SingleChildScrollView(
-                controller: _projectScrollController,
-                child: isDesktop
-                    ? ProjectDesktopLayout(
-                        project: widget.project,
-                      )
-                    : ProjectMobileLayout(
-                        project: widget.project,
-                      ),
-              ),
+              child: isDesktop
+                  ? ProjectDesktopLayout(
+                      project: widget.project,
+                    )
+                  : ProjectMobileLayout(
+                      project: widget.project,
+                    ),
             ),
           ),
         ),

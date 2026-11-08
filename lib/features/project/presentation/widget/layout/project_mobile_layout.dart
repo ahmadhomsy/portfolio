@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/features/project/data/project_model.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/description/project_description.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/description/project_info_card.dart';

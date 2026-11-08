@@ -3,13 +3,33 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_flutter/core/helpers/responsive.dart';
 import 'package:portfolio_flutter/core/theme/app_theme.dart';
 import 'package:portfolio_flutter/features/home/cubit/navigation_cubit.dart';
+import 'package:portfolio_flutter/features/home/data/hero_section_data.dart';
+import 'package:portfolio_flutter/features/home/data/project_section_data.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/home/content_home_body.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/desktop/navigation_bar_desktop.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/mobile/navigation_bar_mobile.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/mobile_tablet_drawer.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _precacheAssets();
+  }
+
+  void _precacheAssets() {
+    precacheImage(const AssetImage(HeroSectionData.profileImage), context);
+    for (final project in ProjectSectionData.projectsList) {
+      precacheImage(AssetImage(project.imagePath), context);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {

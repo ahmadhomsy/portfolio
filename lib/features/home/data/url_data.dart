@@ -5,5 +5,5 @@ class UrlData {
   static const String instagramUrl =
       'https://www.instagram.com/ahmad_alhomsy__?igsh=MXhvZzhtazEwMWV6ZA==';
   static const String urlForDownloadResume =
-      'https://drive.google.com/uc?export=download&id=1tnryvXmiyc056gAH7X44il0J7RbznmbD';
+      'https://drive.google.com/uc?export=download&id=13opPIiLG3LS8NrW9A97JwKcVnKfRHXQr';
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:go_router/go_router.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/core/theme/app_colors.dart';
 import 'package:portfolio_flutter/core/theme/app_text_styles.dart';
 import 'package:portfolio_flutter/features/home/data/experiences_section_data.dart';
@@ -68,7 +69,12 @@ class ExperienceCard extends StatelessWidget {
               if (experience.projectName != null) ...[
                 20.verticalSpace,
                 ExperienceButton(
-                  onTap: () {},
+                  onTap: () {
+                    context.goNamed(
+                      'project_details',
+                      pathParameters: {'id': experience.projectName!},
+                    );
+                  },
                   projectName: experience.projectName!,
                 ),
               ],

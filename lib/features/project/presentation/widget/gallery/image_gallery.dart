@@ -14,17 +14,19 @@ class ImageGallery extends StatelessWidget {
       children: [
         const SectionTitle(title: 'Gallery'),
         ...images.map(
-          (image) => Container(
-            width: 280,
-            height: 620,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: NetworkImage(image),
-                fit: BoxFit.cover,
+          (image) => RepaintBoundary(
+            child: Container(
+              width: 280,
+              height: 620,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(image),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-          ).animate().fadeIn(duration: 500.ms).slideY(),
+            ).animate().fadeIn(duration: 500.ms).slideY(),
+          ),
         ),
       ],
     );

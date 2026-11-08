@@ -66,14 +66,16 @@ class _AnimatedProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ProfileImage(size: size)
-        .animate(onPlay: (controller) => controller.repeat())
-        .shimmer(
-          duration: 5000.ms,
-          color: AppColors.turquoise.withValues(alpha: 0.3),
-        )
-        .animate()
-        .fadeIn(duration: 800.ms)
-        .scale();
+    return RepaintBoundary(
+      child: ProfileImage(size: size)
+          .animate(onPlay: (controller) => controller.repeat())
+          .shimmer(
+            duration: 5000.ms,
+            color: AppColors.turquoise.withValues(alpha: 0.3),
+          )
+          .animate()
+          .fadeIn(duration: 800.ms)
+          .scale(),
+    );
   }
 }

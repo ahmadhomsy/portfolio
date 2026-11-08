@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/core/helpers/responsive.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/download_resume.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/mobile/logo_nav_mobile.dart';

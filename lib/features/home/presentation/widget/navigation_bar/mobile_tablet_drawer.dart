@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/core/theme/app_colors.dart';
 import 'package:portfolio_flutter/features/home/cubit/navigation_cubit.dart';
 import 'package:portfolio_flutter/features/home/data/nav_constant.dart';

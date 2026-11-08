@@ -1,5 +1,5 @@
 class AboutSectionData {
-  static const String aboutImage = 'assets/images/img.png';
+  static const String aboutImage = 'assets/images/img.webp';
   static const String aboutDescription1 =
       "I'm a Mobile Software Engineer and a 4th-year Software Engineering student. "
       'I specialize in building scalable and high-performance mobile applications using Flutter, '

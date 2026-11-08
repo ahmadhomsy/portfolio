@@ -2,6 +2,20 @@ class ExperiencesSectionData {
   static final List<ExperienceModel> experiences = [
     ExperienceModel(
       title: 'Flutter Developer',
+      company: 'University Project',
+      location: 'Remote',
+      date: '2026',
+      projectName: 'Sham Booking',
+      responsibilities: [
+        'Architected a production-ready hotel booking app using Clean Architecture and BLoC for scalable state management.',
+        'Integrated RESTful APIs via Dio with access/refresh token rotation and secure storage mechanisms.',
+        'Implemented dual payment methods (Online Card Payment & Cash on Arrival) and complete reservation lifecycle tracking.',
+        'Integrated Google Maps SDK for location tracking, Firebase Cloud Messaging for push notifications, and multi-language support.',
+        'Configured Development & Production environments (Flavors) along with CI/CD automation pipelines.',
+      ],
+    ),
+    ExperienceModel(
+      title: 'Flutter Developer',
       company: 'Personal Project',
       location: 'Remote',
       date: '2026',

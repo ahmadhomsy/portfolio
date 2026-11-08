@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/core/theme/app_text_styles.dart';
 import 'package:portfolio_flutter/core/widget/fading_divider.dart';
 import 'package:portfolio_flutter/features/home/data/project_section_data.dart';

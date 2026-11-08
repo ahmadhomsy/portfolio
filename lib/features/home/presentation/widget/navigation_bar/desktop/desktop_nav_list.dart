@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/features/home/data/nav_constant.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/desktop/nav_item.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/download_resume.dart';

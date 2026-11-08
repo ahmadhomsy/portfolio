@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_flutter/core/enums/nav_section.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/core/theme/app_text_styles.dart';
 import 'package:portfolio_flutter/core/widget/line_style.dart';
 import 'package:portfolio_flutter/features/home/cubit/navigation_cubit.dart';
@@ -18,9 +18,8 @@ class NavItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final activeSection = context.watch<NavigationCubit>().state;
-
-    final isSelected = activeSection == section;
+    final isSelected = context
+        .select<NavigationCubit, bool>((cubit) => cubit.state == section);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),

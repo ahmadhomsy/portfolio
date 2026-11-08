@@ -24,36 +24,38 @@ class ProjectCardDetails extends StatelessWidget {
           return MouseRegion(
             onEnter: (_) => context.read<HoverCubit>().hoverEnter(),
             onExit: (_) => context.read<HoverCubit>().hoverExit(),
-            child: AnimatedContainer(
-              duration: ProjectSectionData.animationDuration,
-              curve: Curves.easeOut,
-              transformAlignment: Alignment.center,
-              decoration: _buildCardDecoration(isHovered),
-              transform: Matrix4.diagonal3Values(
-                isHovered ? 1.015 : 1.0,
-                isHovered ? 1.015 : 1.0,
-                1,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ProjectImageWithOverlay(
-                      onTap: () {
-                        context.goNamed(
-                          'project_details',
-                          pathParameters: {'id': project.id},
-                        );
-                      },
-                      imagePath: project.imagePath,
-                      isHovered: isHovered,
-                    ),
-                    ProjectDetailsSection(
-                      project: project,
-                      isHovered: isHovered,
-                    ),
-                  ],
+            child: RepaintBoundary(
+              child: AnimatedContainer(
+                duration: ProjectSectionData.animationDuration,
+                curve: Curves.easeOut,
+                transformAlignment: Alignment.center,
+                decoration: _buildCardDecoration(isHovered),
+                transform: Matrix4.diagonal3Values(
+                  isHovered ? 1.015 : 1.0,
+                  isHovered ? 1.015 : 1.0,
+                  1,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProjectImageWithOverlay(
+                        onTap: () {
+                          context.goNamed(
+                            'project_details',
+                            pathParameters: {'id': project.id},
+                          );
+                        },
+                        imagePath: project.imagePath,
+                        isHovered: isHovered,
+                      ),
+                      ProjectDetailsSection(
+                        project: project,
+                        isHovered: isHovered,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

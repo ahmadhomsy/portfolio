@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/core/widget/fading_divider.dart';
 import 'package:portfolio_flutter/features/project/data/project_model.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/description/project_description.dart';
+import 'package:portfolio_flutter/features/project/presentation/widget/gallery/image_gallery.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/header/project_header.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/header/project_header_nav.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/key_features/project_features.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/links/link_section.dart';
-import 'package:portfolio_flutter/features/project/presentation/widget/gallery/image_gallery.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/technologies/project_tech_stack.dart';
 
 class ProjectDesktopLayout extends StatelessWidget {

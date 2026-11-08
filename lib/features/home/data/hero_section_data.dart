@@ -1,5 +1,5 @@
 class HeroSectionData {
-  static const String profileImage = 'assets/images/img.png';
+  static const String profileImage = 'assets/images/img.webp';
   static const String introText = 'Hi, my name is';
   static const String myName = 'Ahmad Alhomsy.';
   static const List<String> titles = [

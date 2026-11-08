@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/features/home/data/experiences_section_data.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/experience/experience_card.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/experience/timeline_marker.dart';

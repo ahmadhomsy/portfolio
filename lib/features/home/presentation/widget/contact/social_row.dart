@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/core/helpers/launcher_service.dart';
 import 'package:portfolio_flutter/features/home/data/url_data.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/contact/social_icon_button.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/core/extension/SizedBoxExtension.dart';
+import 'package:portfolio_flutter/core/extension/sized_box_extension.dart';
 import 'package:portfolio_flutter/core/helpers/launcher_service.dart';
 import 'package:portfolio_flutter/core/widget/header_section.dart';
 import 'package:portfolio_flutter/core/widget/line_style.dart';

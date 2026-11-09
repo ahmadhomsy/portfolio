@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_flutter/core/helpers/responsive.dart';
@@ -25,9 +27,21 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _precacheAssets() {
-    precacheImage(const AssetImage(HeroSectionData.profileImage), context);
+    unawaited(
+      precacheImage(
+        const AssetImage(HeroSectionData.profileImage),
+        context,
+        onError: (_, __) {},
+      ),
+    );
     for (final project in ProjectSectionData.projectsList) {
-      precacheImage(AssetImage(project.imagePath), context);
+      unawaited(
+        precacheImage(
+          AssetImage(project.imagePath),
+          context,
+          onError: (_, __) {},
+        ),
+      );
     }
   }
 

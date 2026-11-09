@@ -31,7 +31,7 @@ class LinkSection extends StatelessWidget {
               ),
             ),
           ],
-        ).animate().fadeIn(delay: 800.ms, duration: 600.ms).slideY()
+        ).animate().fadeIn(delay: 800.ms, duration: 600.ms).slideY(),
       ],
     );
   }

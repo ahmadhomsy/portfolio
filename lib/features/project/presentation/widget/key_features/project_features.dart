@@ -5,7 +5,7 @@ import 'package:portfolio_flutter/features/project/presentation/widget/section_t
 class ProjectFeatures extends StatelessWidget {
   const ProjectFeatures({super.key});
 
-  final List<String> _features = const [
+  static const List<String> _features = [
     'Secure administrator authentication and dynamic dashboard overview',
     'Product catalog management supporting distinct international pricing and local shipping rules',
     'Comprehensive order tracking system with detailed automated receipt generation',
@@ -31,14 +31,14 @@ class ProjectFeatures extends StatelessWidget {
                 crossAxisCount = 2;
               }
 
-              const double spacing = 40.0;
+              const double spacing = 40;
               final itemWidth =
                   (constraints.maxWidth - (spacing * (crossAxisCount - 1))) /
                       crossAxisCount;
 
               return Wrap(
                 spacing: spacing,
-                runSpacing: 30.0,
+                runSpacing: 30,
                 children: _features.map((text) {
                   return SizedBox(
                     width: itemWidth,

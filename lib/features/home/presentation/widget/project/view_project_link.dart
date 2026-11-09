@@ -5,8 +5,11 @@ import 'package:portfolio_flutter/core/theme/app_text_styles.dart';
 import 'package:portfolio_flutter/features/home/data/project_section_data.dart';
 
 class ViewProjectLink extends StatelessWidget {
-  const ViewProjectLink(
-      {required this.projectId, required this.isHovered, super.key});
+  const ViewProjectLink({
+    required this.projectId,
+    required this.isHovered,
+    super.key,
+  });
   final bool isHovered;
   final String projectId;
   @override

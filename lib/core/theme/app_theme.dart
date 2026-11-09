@@ -16,7 +16,7 @@ class AppTheme {
         crossAxisMargin: 4,
         thumbColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.hovered)) {
-            return AppColors.turquoise.withOpacity(0.8);
+            return AppColors.turquoise.withValues(alpha: 0.8);
           }
           return AppColors.turquoise;
         }),

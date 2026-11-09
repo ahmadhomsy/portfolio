@@ -62,7 +62,8 @@ class ContactSection extends StatelessWidget {
                       ? null
                       : () async {
                           await LauncherService.openPhone(
-                              ContactSectionData.phone);
+                            ContactSectionData.phone,
+                          );
                         },
                   titleText: 'PHONE',
                 ),

@@ -38,12 +38,12 @@ class _TechBadge extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppColors.turquoise.withOpacity(0.1),
-            AppColors.turquoise.withOpacity(0.1),
+            AppColors.turquoise.withValues(alpha: 0.1),
+            AppColors.turquoise.withValues(alpha: 0.1),
           ],
         ),
         borderRadius: BorderRadius.circular(25),
-        border: Border.all(color: AppColors.turquoise.withOpacity(0.3)),
+        border: Border.all(color: AppColors.turquoise.withValues(alpha: 0.3)),
       ),
       child: Text(
         tech,

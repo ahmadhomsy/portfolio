@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Section extends StatelessWidget {
   const Section({required this.child, super.key});

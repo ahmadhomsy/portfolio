@@ -1,6 +1,6 @@
 import 'package:portfolio_flutter/core/enums/project_status.dart';
 import 'package:portfolio_flutter/features/project/data/project_model.dart'
-    show ProjectModel, ProjectNavItem;
+    show ProjectModel;
 
 class FakeProjects {
   FakeProjects._();

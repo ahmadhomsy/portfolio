@@ -27,10 +27,10 @@ class ProjectInfoCard extends StatelessWidget {
           colors: [AppColors.surface, AppColors.surfaceLight],
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.turquoise.withOpacity(0.2)),
+        border: Border.all(color: AppColors.turquoise.withValues(alpha: 0.2)),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -87,7 +87,7 @@ class _InfoRow extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: AppColors.turquoise.withOpacity(0.1),
+              color: AppColors.turquoise.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(item.icon, color: AppColors.turquoise, size: 18),

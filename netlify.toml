@@ -1,0 +1,36 @@
+# Netlify Configuration for Flutter Web Deploy Previews
+
+[build]
+  publish = "build/web"
+  command = """
+set -e
+EXPECTED_COMMIT="00b0c91f06209d9e4a41f71b7a512d6eb3b9c694"
+
+if [ ! -x "$HOME/flutter/bin/flutter" ] || [ "$(git -C "$HOME/flutter" rev-parse HEAD 2>/dev/null)" != "$EXPECTED_COMMIT" ]; then
+  echo "Flutter SDK missing, corrupted, or SHA mismatch. Installing Flutter 3.41.9 ($EXPECTED_COMMIT)..."
+  rm -rf "$HOME/flutter"
+  git clone --depth 1 --branch 3.41.9 https://github.com/flutter/flutter.git "$HOME/flutter"
+fi
+
+INSTALLED_COMMIT="$(git -C "$HOME/flutter" rev-parse HEAD 2>/dev/null)"
+if [ "$INSTALLED_COMMIT" != "$EXPECTED_COMMIT" ]; then
+  echo "Error: Installed Flutter commit ($INSTALLED_COMMIT) does not match expected ($EXPECTED_COMMIT)" >&2
+  exit 1
+fi
+
+export PATH="$HOME/flutter/bin:$PATH"
+flutter precache --web
+flutter pub get
+flutter build web --release
+"""
+
+# Avoid duplicate production deployments on main branch
+# Production deployments are exclusively managed by GitHub Actions CI/CD pipeline
+[context.production]
+  ignore = "exit 0"
+
+# SPA client-side routing fallback for Netlify Deploy Previews
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

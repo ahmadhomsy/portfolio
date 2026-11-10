@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/core/theme/app_colors.dart';
 import 'package:portfolio_flutter/core/theme/app_text_styles.dart';
+import 'package:portfolio_flutter/core/widget/lazy_asset_image.dart';
 import 'package:portfolio_flutter/features/home/data/project_section_data.dart';
 
 class ProjectImageWithOverlay extends StatelessWidget {
@@ -19,14 +20,13 @@ class ProjectImageWithOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SizedBox(
+        LazyAssetImage(
+          key: ValueKey('project_thumbnail_$imagePath'),
+          imagePath: imagePath,
           height: 220,
           width: double.infinity,
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-            excludeFromSemantics: true,
-          ),
+          fit: BoxFit.cover,
+          excludeFromSemantics: true,
         ),
         Positioned.fill(
           child: IgnorePointer(

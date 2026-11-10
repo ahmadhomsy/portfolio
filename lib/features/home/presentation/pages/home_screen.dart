@@ -6,7 +6,6 @@ import 'package:portfolio_flutter/core/helpers/responsive.dart';
 import 'package:portfolio_flutter/core/theme/app_theme.dart';
 import 'package:portfolio_flutter/features/home/cubit/navigation_cubit.dart';
 import 'package:portfolio_flutter/features/home/data/hero_section_data.dart';
-import 'package:portfolio_flutter/features/home/data/project_section_data.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/home/content_home_body.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/desktop/navigation_bar_desktop.dart';
 import 'package:portfolio_flutter/features/home/presentation/widget/navigation_bar/mobile/navigation_bar_mobile.dart';
@@ -20,13 +19,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool _hasPrecachedHero = false;
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _precacheAssets();
+    if (!_hasPrecachedHero) {
+      _hasPrecachedHero = true;
+      _precacheHeroImage();
+    }
   }
 
-  void _precacheAssets() {
+  void _precacheHeroImage() {
     unawaited(
       precacheImage(
         const AssetImage(HeroSectionData.profileImage),
@@ -34,15 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
         onError: (_, __) {},
       ),
     );
-    for (final project in ProjectSectionData.projectsList) {
-      unawaited(
-        precacheImage(
-          AssetImage(project.imagePath),
-          context,
-          onError: (_, __) {},
-        ),
-      );
-    }
   }
 
   @override

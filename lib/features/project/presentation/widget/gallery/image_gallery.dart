@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:portfolio_flutter/core/widget/lazy_asset_image.dart';
 import 'package:portfolio_flutter/features/project/presentation/widget/section_title.dart';
 
 class ImageGallery extends StatelessWidget {
@@ -15,16 +16,13 @@ class ImageGallery extends StatelessWidget {
         const SectionTitle(title: 'Gallery'),
         ...images.map(
           (image) => RepaintBoundary(
-            child: Container(
+            child: LazyAssetImage(
+              key: ValueKey('gallery_$image'),
+              imagePath: image,
               width: 280,
               height: 620,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: AssetImage(image),
-                  fit: BoxFit.cover,
-                ),
-              ),
+              fit: BoxFit.cover,
+              borderRadius: BorderRadius.circular(10),
             ).animate().fadeIn(duration: 500.ms).slideY(),
           ),
         ),
